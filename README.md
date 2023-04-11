@@ -5,9 +5,9 @@
 
 ## processnodeh5 仓库和预览
 
-[git地址](http://localhost/)
+[git地址](https://github.com/sirxue66/processnodeh5/tree/main/package)
 
-[预览地址](http://localhost/ "普通链接带标题")
+[预览地址](https://sirxue66.github.io/processnodeh5/)
 
 
 ## props
