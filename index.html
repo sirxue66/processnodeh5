@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svelet测试</title>
+</head>
+<body>
+    <process-node-diagram w="800" nodewidth="160" iconwidth="20">
+			<button style="height: 100%;width:100%;background: #e60027;border:0;color:#fff;" slot="node-1">我是自定义节点</button>
+	</process-node-diagram>
+</body>
+<!-- <script src="../build/ProcessNodeDiagram.es.js"></script> -->
+<script type="module">
+	import "../build/ProcessNodeDiagram.umd.js"
+    const nodeList = [
+			{
+				name: 'node-1',
+				nodename: '节点一',
+				id: 1
+			},
+			{
+				name: 'node-2',
+				nodename: '节点二',
+				id: 2
+			},
+			{
+				name: 'node-3',
+				nodename: '节点三',
+				id: 3
+			},
+			{
+				name: 'node-4',
+				nodename: '节点四',
+				id: 4
+			},
+			{
+				name: 'node-5',
+				nodename: '节点五',
+				id: 5
+			},
+			{
+				name: 'node-6',
+				nodename: '节点六',
+				id: 6
+			},
+			{
+				name: 'node-7',
+				nodename: '节点七',
+				id: 7
+			},
+			{
+				name: 'node-8',
+				nodename: '节点八',
+				id: 8
+			},
+			{
+				name: 'node-9',
+				nodename: '节点九',
+				id: 9
+			}
+		]
+// 由于原生无法绑定数组，所以可以使用js手动将数组转换成字符串进行绑定
+	document.querySelector('process-node-diagram').setAttribute('nodelist', JSON.stringify(nodeList))
+
+	window.addEventListener('node-click-event', function(e){
+		console.log(e.detail)
+		alert("节点数据：" + JSON.stringify(e.detail))
+	}, false)
+</script>
+
+</html>

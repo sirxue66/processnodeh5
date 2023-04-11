@@ -1,0 +1,22 @@
+{
+  "name": "processnodeh5",
+  "version": "1.0.0",
+  "description": "流程节点图的web Component组件",
+  "main": "ProcessNodeDiagram.umd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "流程节点图",
+    "节点自定义",
+    "web",
+    "Component"
+  ],
+  "author": "Xcc",
+  "license": "ISC"
+}
