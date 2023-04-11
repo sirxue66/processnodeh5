@@ -6,16 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "",
+  "homepage": "https://sirxue66.github.io/processnodeh5/",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/sirxue66/processnodeh5/tree/main/package"
   },
   "keywords": [
     "流程节点图",
     "节点自定义",
-    "web",
-    "Component"
+    "web Component"
   ],
   "author": "Xcc",
   "license": "ISC"
