@@ -12,16 +12,16 @@
 
 ## props
 
-| props             | 解释                  | type      |   默认值     | 是否必须      |
-| -------------     | -------------         | --------- | ----------- | -------------|
-| nodelist          | 节点流程数组          | string    | []          | 否            |
-| w                 |   流程图整体宽度      | string    | 1000         | 否           |
-| nodewidth         | 单个节点+箭头icon的宽度 | string  | 160           |  否          |
-| iconwidth         | 单个箭头icon的宽度    | string    | 20            | 否           |
-| iconcolor         | 箭头的颜色            | string    | #1890ff       | 否           |
-| rowspacing        | 两行节点间的间隙       | string   | 3              | 否           |
+| props             | 解释                      | type      |   默认值     | 是否必须      |
+| -------------     | -------------             | --------- | ----------- | -------------|
+| nodelist          | 节点流程数组               | string    | []          | 否            |
+| w                 |   流程图整体宽度            | string    | 1000         | 否           |
+| nodewidth         | 单个节点+箭头icon的宽度     | string  | 160           |  否          |
+| iconwidth         | 单个箭头icon的宽度    	| string    | 20            | 否           |
+| iconcolor         | 箭头的颜色            	| string    | #1890ff       | 否           |
+| rowspacing        | 两行节点间的间隙       	| string   | 3              | 否           |
 
-####**nodelist要求**
+#### **nodelist要求**
 **nodelist数组中每一项应该包含两个字段 name 和 nodename；**
 **nodename: 节点显示的名称字段**
 **name: 如果节点使用插槽替换，每个节点的插槽名称就是该项数据的name字段，并且每项数据的name字段应该保持唯一**
@@ -47,7 +47,7 @@ window.addEventListener('node-click-event', function(e){
 	}, false)
 ```
 
-#### 使用示例
+## 使用示例
 
 **使用es包**
 ```javascript
@@ -116,7 +116,7 @@ window.addEventListener('node-click-event', function(e){
 
 ```
 
-**使用umd包（即npm包）**
+**使用umd包（或者使用npm包）**
 ```javascript
 <script setup lang="ts">
 import "processnodeh5"
