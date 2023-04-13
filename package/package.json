@@ -1,6 +1,6 @@
 {
   "name": "processnodeh5",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "流程节点图的web Component组件",
   "main": "ProcessNodeDiagram.umd.js",
   "scripts": {
