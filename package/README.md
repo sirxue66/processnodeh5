@@ -183,4 +183,51 @@ window.addEventListener('node-click-event', function(e:any){
 
 ```
 
+## 新增置灰状态（添加 disabled 属性）
+**使用umd包（或者使用npm包）**
+```javascript
+<script setup lang="ts">
+import "processnodeh5"
+const nodeList = [
+			{
+				name: 'node-1',
+				nodename: '节点一',
+				disabled: false,
+				id: 1
+			},
+			{
+				name: 'node-2',
+				nodename: '节点二',
+				disabled: false,
+				id: 2
+			},
+			{
+				name: 'node-3',
+				nodename: '节点三',
+				disabled: true,
+				id: 3
+			},
+			{
+				name: 'node-4',
+				nodename: '节点四',
+				disabled: true,
+				id: 4
+			},
+			{
+				name: 'node-5',
+				nodename: '节点五',
+				disabled: false,
+				id: 5
+			}
+		]
+// 模拟请求数据
+setTimeout(() => {
+  document.querySelector('process-node-diagram')?.setAttribute('nodelist', JSON.stringify(nodeList))
+}, 1000)
+
+window.addEventListener('node-click-event', function(e:any){
+		console.log(e.detail)
+	}, false)
+</script>
+```
 

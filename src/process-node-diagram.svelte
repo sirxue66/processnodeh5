@@ -1,5 +1,9 @@
 <svelte:options tag='process-node-diagram'></svelte:options>
 <script>
+    /**
+     * @author: Xcc
+     * @description: 流程节点图 
+     */
     export let nodelist = [], w = 1000, nodewidth = 160, iconwidth = 20, iconcolor = '#1890ff', rowspacing = 3
     nodelist = stringToArray(nodelist)
     import {createEventDispatcher} from "svelte"
@@ -69,7 +73,7 @@
 
     <div class="container" style="width: {w}px;">
         {#each endList as item, index (index)}
-        <ul style="{index / 2 === 0 ? `justify-content: flex-start;margin-bottom:${rowspacing}px;` : `justify-content: flex-end;padding-right:${iconwidth}px;margin-bottom:${rowspacing}px;` }">
+        <ul style="{index % 2 === 0 ? `justify-content: flex-start;margin-bottom:${rowspacing}px;` : `justify-content: flex-end;padding-right:${Number(iconwidth) + 3}px;margin-bottom:${rowspacing}px;` }">
             {#each item as citem, cindex (cindex)}
                 <li>
                     {#if citem.direction === 'left'}
@@ -86,7 +90,7 @@
                     <div>
                         <div style="min-width: {itemW}px;" class="nodeBody">
                             <slot {...citem}>
-                                <button on:click={nodeClick(citem)}>{citem.nodename}</button>
+                                <button style="{citem.disabled ? 'color:#999999' : ''}" on:click={nodeClick(citem)}>{citem.nodename}</button>
                             </slot>
                         </div>
                         {#if citem.direction === 'down'}

@@ -543,7 +543,7 @@ function get_each_context_1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (75:20) {#if citem.direction === 'left'}
+// (79:20) {#if citem.direction === 'left'}
 function create_if_block_2(ctx) {
 	let div;
 	let svg;
@@ -585,7 +585,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (92:24) {#if citem.direction === 'down'}
+// (96:24) {#if citem.direction === 'down'}
 function create_if_block_1(ctx) {
 	let svg;
 	let path;
@@ -624,7 +624,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (102:20) {#if citem.direction === 'right'}
+// (106:20) {#if citem.direction === 'right'}
 function create_if_block(ctx) {
 	let div;
 	let svg;
@@ -666,7 +666,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (73:12) {#each item as citem, cindex (cindex)}
+// (77:12) {#each item as citem, cindex (cindex)}
 function create_each_block_1(key_1, ctx) {
 	let li;
 	let t0;
@@ -676,6 +676,7 @@ function create_each_block_1(key_1, ctx) {
 	let button;
 	let t1_value = /*citem*/ ctx[13].nodename + "";
 	let t1;
+	let button_style_value;
 	let t2;
 	let t3;
 	let mounted;
@@ -707,6 +708,7 @@ function create_each_block_1(key_1, ctx) {
 			if (if_block1) if_block1.c();
 			t3 = space();
 			if (if_block2) if_block2.c();
+			attr(button, "style", button_style_value = /*citem*/ ctx[13].disabled ? 'color:#999999' : '');
 			set_attributes(slot, slot_data);
 			set_style(div0, "min-width", /*itemW*/ ctx[4] + "px");
 			attr(div0, "class", "nodeBody");
@@ -751,6 +753,11 @@ function create_each_block_1(key_1, ctx) {
 			}
 
 			if (dirty & /*endList*/ 32 && t1_value !== (t1_value = /*citem*/ ctx[13].nodename + "")) set_data(t1, t1_value);
+
+			if (dirty & /*endList*/ 32 && button_style_value !== (button_style_value = /*citem*/ ctx[13].disabled ? 'color:#999999' : '')) {
+				attr(button, "style", button_style_value);
+			}
+
 			set_attributes(slot, slot_data = get_spread_update(slot_levels, [dirty & /*endList*/ 32 && /*citem*/ ctx[13]]));
 
 			if (dirty & /*itemW*/ 16) {
@@ -794,7 +801,7 @@ function create_each_block_1(key_1, ctx) {
 	};
 }
 
-// (71:8) {#each endList as item, index (index)}
+// (75:8) {#each endList as item, index (index)}
 function create_each_block(key_1, ctx) {
 	let ul;
 	let each_blocks = [];
@@ -822,9 +829,9 @@ function create_each_block(key_1, ctx) {
 
 			t = space();
 
-			attr(ul, "style", ul_style_value = /*index*/ ctx[12] / 2 === 0
+			attr(ul, "style", ul_style_value = /*index*/ ctx[12] % 2 === 0
 			? `justify-content: flex-start;margin-bottom:${/*rowspacing*/ ctx[3]}px;`
-			: `justify-content: flex-end;padding-right:${/*iconwidth*/ ctx[1]}px;margin-bottom:${/*rowspacing*/ ctx[3]}px;`);
+			: `justify-content: flex-end;padding-right:${Number(/*iconwidth*/ ctx[1]) + 3}px;margin-bottom:${/*rowspacing*/ ctx[3]}px;`);
 
 			this.first = ul;
 		},
@@ -847,9 +854,9 @@ function create_each_block(key_1, ctx) {
 				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value_1, each_1_lookup, ul, destroy_block, create_each_block_1, t, get_each_context_1);
 			}
 
-			if (dirty & /*endList, rowspacing, iconwidth*/ 42 && ul_style_value !== (ul_style_value = /*index*/ ctx[12] / 2 === 0
+			if (dirty & /*endList, rowspacing, iconwidth*/ 42 && ul_style_value !== (ul_style_value = /*index*/ ctx[12] % 2 === 0
 			? `justify-content: flex-start;margin-bottom:${/*rowspacing*/ ctx[3]}px;`
-			: `justify-content: flex-end;padding-right:${/*iconwidth*/ ctx[1]}px;margin-bottom:${/*rowspacing*/ ctx[3]}px;`)) {
+			: `justify-content: flex-end;padding-right:${Number(/*iconwidth*/ ctx[1]) + 3}px;margin-bottom:${/*rowspacing*/ ctx[3]}px;`)) {
 				attr(ul, "style", ul_style_value);
 			}
 		},
@@ -898,7 +905,7 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*endList, rowspacing, iconwidth, iconcolor, itemW, nodeClick*/ 62) {
+			if (dirty & /*endList, rowspacing, Number, iconwidth, iconcolor, itemW, nodeClick*/ 62) {
 				each_value = /*endList*/ ctx[5];
 				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, div, destroy_block, create_each_block, null, get_each_context);
 			}
